@@ -21,11 +21,29 @@ references/telemetry-optouts.md   catalog of env vars and config commands
 
 ## Install
 
-Drop this directory into your Claude skills path (e.g. `~/.claude/skills/privacy-hygiene/`), or package it:
+Skills live under `~/.claude/skills/<name>/`, with `SKILL.md` at the root of that directory. Pick one:
+
+**From the release bundle** (one download, no clone):
+
+```sh
+cd ~/.claude/skills
+curl -L https://github.com/jaschadub/devprivacy-skill/releases/latest/download/privacy-hygiene.skill -o privacy-hygiene.zip
+unzip privacy-hygiene.zip -d privacy-hygiene && rm privacy-hygiene.zip
+```
+
+**From a clone** (to track updates / hack on it):
+
+```sh
+git clone https://github.com/jaschadub/devprivacy-skill.git ~/.claude/skills/privacy-hygiene
+```
+
+**Build your own bundle** from a checkout:
 
 ```sh
 zip -r privacy-hygiene.skill SKILL.md scripts references
 ```
+
+Verify the layout — `~/.claude/skills/privacy-hygiene/SKILL.md` must exist. Claude picks the skill up on the next session.
 
 ## Usage
 
