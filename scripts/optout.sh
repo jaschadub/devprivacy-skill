@@ -228,7 +228,10 @@ verify() {
   if [[ $tested -eq 0 ]]; then
     echo "  No wired interactive shell available; sourcing opt-out file directly."
     local oks=0 kv var want got
-    set +u; . "$OPTOUT_FILE"; set -u
+    set +u
+    # shellcheck source=/dev/null
+    . "$OPTOUT_FILE"
+    set -u
     for kv in "${ENV_VARS[@]}"; do
       var="${kv%%=*}"; want="${kv#*=}"; got="${!var:-UNSET}"
       if [[ "$got" == "$want" ]]; then oks=$((oks+1))
