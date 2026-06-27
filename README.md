@@ -1,5 +1,7 @@
 # privacy-hygiene
 
+[![ci](https://github.com/jaschadub/devprivacy-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/jaschadub/devprivacy-skill/actions/workflows/ci.yml)
+
 A Claude skill to opt out of telemetry and protect digital privacy across a development environment.
 
 Two modes plus standing behaviors:
